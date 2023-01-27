@@ -18,5 +18,11 @@ jobs:
 
     # Build project
 
+    - name: Build project
+      run: |
+        mkdir build
+        cd build
+        cmake ..
+
     # Run tests
 
