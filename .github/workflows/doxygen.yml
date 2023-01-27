@@ -15,18 +15,22 @@ jobs:
     # mattnotmitt/doxygen-action
     # https://github.com/marketplace/actions/doxygen-action
 
-	- name: Build Doxygen
-	  uses: mattnotmitt/doxygen-action@v1.9.5
-	  with:
-	    working-directory: '.'
-	    doxyfile-path: './Doxyfile'
-	    enable-latex: true
-	    
+
+    - name: Build Doxygen
+      uses: mattnotmitt/doxygen-action@v1.9.5
+      with:
+         working-directory: '.'
+         doxyfile-path: './Doxyfile'
+         enable-latex: true
+
     # Deploy Doxygen documentation
     # peaceiris/actions-gh-pages
     # https://github.com/peaceiris/actions-gh-pages
-	- name: Deploy
-	  uses: peaceiris/actions-gh-pages@v3
-	  with:
-	    github_token: ${{ secrets.GITHUB_TOKEN }}
-	    publish_dir: ./docs
+
+    - name: Deploy Doxygen
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        github_token: ${{ secrets.PERSONAL_TOKEN }}
+        publish_dir: ./docs
+        enable_jekyll: true
+
